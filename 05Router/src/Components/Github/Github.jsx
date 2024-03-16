@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { useLoaderData } from "react-router-dom"
 
 
@@ -14,9 +13,17 @@ function Github() {
     // },[])
 
   return (
-    <div className='text-center bg-gray-500 text-white py-4 text-3xl  mx-4 px-2'>
-      Github Followers: {data.followers}
+    <div className='text-center bg-gray-500 text-white py-2 text-3xl  mx-4 px-2'>
+      {data.name}
+      <div className=" flex flex-row space-x-3">
       <img src={data.avatar_url} alt="git picture" width={300} />
+      <ul className=" text-left">
+        <li><h1>Github Followers: {data.followers}</h1></li>
+        <li><h2>{data.bio}</h2></li>
+      </ul>
+      
+      
+        </div>
     </div>
   )
 }
